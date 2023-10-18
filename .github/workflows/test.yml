@@ -18,5 +18,8 @@ jobs:
         with:
           tflint_version: "latest"  # Fetch the latest version of TFLint
 
+      - name: Show Linux version
+        run: uname -a
+        
       - name: Run TFLint 
         run: tflint
