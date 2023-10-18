@@ -16,7 +16,7 @@ jobs:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
       
       - name: Print Access Key
-        run: echo "Access Key: $ACCESS_KEY"
+        run: echo $ACCESS_KEY
   
   tflint_and_packer:
     runs-on: ubuntu-latest
