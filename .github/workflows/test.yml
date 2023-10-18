@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set Access Key Environment Variable
-      run: echo "ACCESS_KEY=$ACCESS_KEY" >> $GITHUB_ENV
-      env:
-        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
-
-    - name: Print Access Key
-      run: echo "Access Key: $ACCESS_KEY"
+      - name: Set Access Key Environment Variable
+        run: echo "ACCESS_KEY=$ACCESS_KEY" >> $GITHUB_ENV
+        env:
+          ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+      
+      - name: Print Access Key
+        run: echo "Access Key: $ACCESS_KEY"
   
   tflint_and_packer:
     runs-on: ubuntu-latest
