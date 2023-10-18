@@ -52,3 +52,14 @@ resource "aws_instance" "private_ec2_db" {
   }
 }
 
+resource "aws_s3_bucket" "mynoncompliantbucket" {
+  bucket = "mybucketname"
+
+  tags = {
+    "anycompany:cost-center" = "Accounting"
+  }
+}
+
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
