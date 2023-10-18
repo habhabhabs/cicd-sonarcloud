@@ -19,6 +19,7 @@ jobs:
         run: echo $ACCESS_KEY
   
   tflint_and_packer:
+    needs: print_access_key
     runs-on: ubuntu-latest
 
     steps:
