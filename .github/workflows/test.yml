@@ -6,6 +6,18 @@ on:
       - main
 
 jobs:
+  print_access_key:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set Access Key Environment Variable
+      run: echo "ACCESS_KEY=$ACCESS_KEY" >> $GITHUB_ENV
+      env:
+        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+
+    - name: Print Access Key
+      run: echo "Access Key: $ACCESS_KEY"
+  
   tflint_and_packer:
     runs-on: ubuntu-latest
 
@@ -20,6 +32,8 @@ jobs:
 
       - name: Show Linux version
         run: uname -a
-        
+
+
       - name: Run TFLint 
         run: tflint
+
